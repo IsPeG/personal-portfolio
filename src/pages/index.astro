@@ -20,16 +20,16 @@ import Main from "../components/Main.astro";
   body {
     margin: 0;
     padding: 0;
-  }
 
-  .wrapper {
-    padding: 1rem;
-    display: flex;
-    height: 100vh;
-    flex-direction: column;
+    background-image: linear-gradient(
+        rgba(246, 246, 246, 0.4) 0.1em,
+        transparent 0.1em
+      ),
+      linear-gradient(90deg, rgba(246, 246, 246, 0.4) 0.1em, transparent 0.1em);
+    background-size: 3em 3em;
 
     font-family:
-      "Devanagari Sangam MN",
+      "Computer Modern Typewriter Text Regular",
       ui-sans-serif,
       system-ui,
       -apple-system,
@@ -44,6 +44,38 @@ import Main from "../components/Main.astro";
       "Segoe UI Emoji",
       "Segoe UI Symbol",
       "Noto Color Emoji";
+  }
+
+  body.dark-mode {
+    background-image: linear-gradient(
+        rgba(26, 26, 26, 0.4) 0.1em,
+        transparent 0.1em
+      ),
+      linear-gradient(90deg, rgba(26, 26, 26, 0.4) 0.1em, transparent 0.1em);
+  }
+
+  .wrapper {
+    padding: 1rem;
+    display: flex;
+    height: 100vh;
+    flex-direction: column;
+
+    /* font-family:
+      "Devanagari Sangam MN",
+      ui-sans-serif,
+      system-ui,
+      -apple-system,
+      BlinkMacSystemFont,
+      "Segoe UI",
+      Roboto,
+      "Helvetica Neue",
+      Arial,
+      "Noto Sans",
+      sans-serif,
+      "Apple Color Emoji",
+      "Segoe UI Emoji",
+      "Segoe UI Symbol",
+      "Noto Color Emoji"; */
   }
 
   /* desktop */

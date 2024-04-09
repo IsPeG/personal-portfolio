@@ -1,0 +1,103 @@
+---
+import { Image } from "astro:assets";
+---
+
+<section id="about">
+  <h1 class="">
+    <span class="noise-texture-text">[1].</span>
+    <span class="noise-texture-text">About·me</span>
+    <span class="jp">// 私のこと</span>
+  </h1>
+  <div class="about-container">
+    <div class="about-text">
+      <h3 class="noise-texture-text">Hello! I'm Ismael Gómez Reche</h3>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid quia
+        quibusdam facilis eaque minima! Deleniti sit fugiat accusantium ullam
+        similique possimus saepe doloribus, minima earum necessitatibus hic modi
+        commodi eos? Lorem ipsum dolor sit amet consectetur adipisicing elit.
+        Aliquid quia quibusdam facilis eaque minima! Deleniti sit fugiat
+        accusantium ullam similique possimus saepe doloribus, minima earum
+        necessitatibus hic modi commodi eos?
+      </p>
+    </div>
+    <div>
+      <Image
+        class="about-me-image"
+        src="/images/me.jpg"
+        alt="me"
+        width={100}
+        height={100}
+      />
+    </div>
+  </div>
+</section>
+
+<style>
+  h1 {
+    border-bottom: 1px dashed #00000020;
+    margin: 0;
+    font-family:
+      "Computer Modern Typewriter Text Regular",
+      ui-sans-serif,
+      system-ui,
+      -apple-system,
+      BlinkMacSystemFont,
+      "Segoe UI",
+      Roboto,
+      "Helvetica Neue",
+      Arial,
+      "Noto Sans",
+      sans-serif,
+      "Apple Color Emoji",
+      "Segoe UI Emoji",
+      "Segoe UI Symbol",
+      "Noto Color Emoji";
+  }
+
+  h1 span {
+    margin-right: 1.5rem;
+  }
+
+  h3 {
+    margin-top: 0;
+    text-align: right;
+  }
+
+  p {
+    margin: 0;
+  }
+
+  .about-container {
+    display: flex;
+    margin-bottom: 5rem;
+    margin-top: 2rem;
+    flex-direction: column;
+
+    @media (min-width: 1024px) {
+      flex-direction: row;
+    }
+  }
+
+  .about-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .about-me-image {
+    display: block;
+    margin: 0 5rem;
+    height: 15rem;
+    width: auto;
+    -webkit-filter: grayscale(80%); /* Safari 6.0 - 9.0 */
+    filter: grayscale(80%);
+  }
+
+  .jp {
+    float: right;
+    opacity: 0.2;
+    font-size: 1.1rem;
+    margin: 0 !important;
+  }
+</style>

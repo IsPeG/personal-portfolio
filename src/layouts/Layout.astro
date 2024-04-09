@@ -16,19 +16,21 @@ const { title } = Astro.props;
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
   </head>
-  <body>
+  <body class="dark-mode">
     <slot />
   </body>
 </html>
 <style is:global>
   @font-face {
     font-family: "Devanagari Sangam MN";
-    src: url("fonts/devangari-sangam-mn.ttf");
+    src: url("fonts/devanagari-sangam-mn.ttf");
   }
 
   @font-face {
     font-family: "Computer Modern Typewriter Text Regular";
     src: url("fonts/cmu.typewriter-text-light.ttf");
+    /* src: url("fonts/courier-prime.ttf"); */
+    /* src: url("fonts/metropolis-regular.ttf"); */
   }
 
   :root {
@@ -43,6 +45,12 @@ const { title } = Astro.props;
     );
     --mobile-breakpoint: 1024px;
   }
+
+  .dark-mode {
+    background-color: black;
+    color: white;
+  }
+
   html {
     font-family: system-ui, sans-serif;
     background: white;
@@ -53,5 +61,16 @@ const { title } = Astro.props;
     background: url("images/noise.jpg") 0 0 / cover no-repeat;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+  }
+
+  .dark-mode .noise-texture-text {
+    filter: invert(100%);
+  }
+
+  hr {
+    display: block;
+    border: 0px;
+    height: 1px;
+    background-color: black;
   }
 </style>

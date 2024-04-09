@@ -1,35 +1,24 @@
+---
+import About from "../components/About.astro";
+import Knowledge from "../components/Knowledge.astro";
+import Projects from "../components/Projects.astro";
+---
+
 <main>
-  <div class="test"></div>
-  <div class="test"></div>
-  <div class="test blue" id="knowledge"></div>
-  <div class="test"></div>
-  <div class="test"></div>
-  <div class="test"></div>
-  <div class="test"></div>
-  <div class="test"></div>
-  <div class="test blue" id="projects"></div>
+  <About />
+  <Knowledge />
+  <Projects />
 </main>
 
 <style>
   main {
     width: 100%;
-    background-color: blueviolet;
-    overflow-y: auto;
-    scrollbar-width: none;
-  }
-
-  /* desktop */
-  @media (min-width: 1024px) {
-    main {
+    overflow-y: none;
+    /* desktop */
+    @media (min-width: 1024px) {
       width: 67%;
+      overflow-y: auto;
+      scrollbar-width: none;
     }
-  }
-
-  .test {
-    height: 10rem;
-  }
-
-  .blue {
-    background-color: aquamarine;
   }
 </style>
