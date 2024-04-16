@@ -1,0 +1,80 @@
+---
+import Arrow from "../../../public/images/arrow.svg";
+
+interface Props {
+  link: string;
+  name: string;
+}
+
+const { link, name } = Astro.props;
+---
+
+<span>
+  <a href={link} target="_blank">{name}</a>
+  <img src={Arrow.src} width="20" height="20" />
+</span>
+
+<style>
+  span {
+    display: inline-flex;
+  }
+
+  span img {
+    --Y-axis: -1px;
+    --X-axis: 2px;
+
+    -webkit-transform: translateX(var(--X-axis)) translateY(var(--Y-axis));
+    -moz-transform: translateX(var(--X-axis)) translateY(var(--Y-axis));
+    transform: translateX(var(--X-axis)) translateY(var(--Y-axis));
+  }
+
+  span a {
+    color: inherit;
+    font-weight: bold;
+    margin-right: -7px;
+    margin-left: -7px;
+  }
+
+  span a:before,
+  span a:after {
+    display: inline-block;
+    opacity: 0;
+    -webkit-transition:
+      -webkit-transform 0.3s,
+      opacity 0.2s;
+    -moz-transition:
+      -moz-transform 0.3s,
+      opacity 0.2s;
+    transition:
+      transform 0.3s,
+      opacity 0.2s;
+  }
+
+  span a:before {
+    margin-right: 1px;
+    font-weight: normal;
+    content: "[";
+    -webkit-transform: translateX(20px);
+    -moz-transform: translateX(20px);
+    transform: translateX(20px);
+  }
+
+  span a:after {
+    margin-left: 1px;
+    font-weight: normal;
+    content: "]";
+    -webkit-transform: translateX(-20px);
+    -moz-transform: translateX(-20px);
+    transform: translateX(-20px);
+  }
+
+  span a:hover:before,
+  span a:hover:after,
+  span a:focus:before,
+  span a:focus:after {
+    opacity: 1;
+    -webkit-transform: translateX(0px);
+    -moz-transform: translateX(0px);
+    transform: translateX(0px);
+  }
+</style>

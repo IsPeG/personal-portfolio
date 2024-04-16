@@ -76,6 +76,7 @@ import { Image } from "astro:assets";
 
     @media (min-width: 1024px) {
       flex-direction: row;
+      justify-content: space-between;
     }
   }
 
@@ -83,6 +84,7 @@ import { Image } from "astro:assets";
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    max-width: 55rem;
   }
 
   .about-me-image {
@@ -90,8 +92,10 @@ import { Image } from "astro:assets";
     margin: 0 5rem;
     height: 15rem;
     width: auto;
-    -webkit-filter: grayscale(80%); /* Safari 6.0 - 9.0 */
-    filter: grayscale(80%);
+    -webkit-filter: grayscale(50%);
+    filter: grayscale(50%);
+    border-top-left-radius: 1rem;
+    border-bottom-right-radius: 1rem;
   }
 
   .jp {
