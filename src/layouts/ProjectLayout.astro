@@ -1,0 +1,180 @@
+---
+import Arrow from "/public/images/arrow.svg";
+
+const { title, link, previewTitle, previewText } = Astro.props;
+const formattedTitle = title.replace(/\s/g, "");
+---
+
+<section style="height: 100%;">
+  <div style="max-width: 55rem;" id={formattedTitle + "Wrapper"}>
+    <h2 class="noise-texture-text" id={title}>
+      <span>{formattedTitle}</span>
+      <span class="title-aside">
+        <a href={link} target="_blank">
+          <img src={Arrow.src} />
+        </a>
+      </span>
+    </h2>
+    <div id={formattedTitle + "Preview"}>
+      <h3 class="noise-texture-text">{previewTitle}</h3>
+      <p>
+        {previewText}
+        <div class="gradient">
+          <span id={"ReadMore" + formattedTitle} class="clickable">
+            {">"} Read more {"<"}
+          </span>
+        </div>
+      </p>
+    </div>
+    <div id={formattedTitle + "ShowAll"} style="display: none;">
+      <!-- <div class="animation"></div> -->
+      <slot />
+      <span id={"Hide" + formattedTitle} class="clickable">
+        {">"} I'm done reading! {"<"}
+      </span>
+    </div>
+  </div>
+</section>
+
+<script is:inline define:vars={{ formattedTitle }}>
+  const _ReadMore = document.getElementById(`ReadMore${formattedTitle}`);
+  const _Preview = document.getElementById(`${formattedTitle}Preview`);
+  const _ShowAll = document.getElementById(`${formattedTitle}ShowAll`);
+  const _Hide = document.getElementById(`Hide${formattedTitle}`);
+  const _test = document.getElementById(`${formattedTitle}Wrapper`);
+  _ReadMore.addEventListener("pointerdown", function () {
+    _test.classList.remove("backwards");
+    _test.classList.add("animation");
+    _Preview.style.display = "none";
+    _ShowAll.style.display = "block";
+  });
+  _Hide.addEventListener("pointerdown", async function () {
+    _test.classList.remove("animation");
+    _test.classList.add("backwards");
+    _Preview.style.display = "block";
+    await new Promise((resolve) => setTimeout(resolve, 500));
+    _ShowAll.style.display = "none";
+  });
+</script>
+
+<style>
+  section {
+    margin-bottom: 5rem;
+  }
+
+  h3 {
+    border-bottom: 1px dashed #00000020;
+  }
+
+  h3:not(:nth-child(-n + 2)) {
+    margin-top: 3rem;
+  }
+
+  .title-aside {
+    float: right;
+  }
+
+  li {
+    margin-bottom: 1rem;
+  }
+
+  .gallery-wrapper {
+    margin-right: 0rem;
+
+    @media (min-width: 1024px) {
+      margin-right: 5rem;
+
+      display: grid;
+      grid-column-gap: 0px;
+      grid-row-gap: 0px;
+      margin-right: 5rem;
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: repeat(2, 1fr);
+    }
+  }
+
+  .gallery-wrapper img {
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+
+  .test {
+    transition: height 0.5s;
+  }
+
+  .gallery-wrapper img:nth-child(1) {
+    grid-area: 1 / 1 / 2 / 2;
+    border-top-left-radius: 3rem;
+  }
+
+  .gallery-wrapper img:nth-child(2) {
+    grid-area: 2 / 1 / 3 / 2;
+    border-bottom-left-radius: 3rem;
+  }
+
+  .gallery-wrapper img:nth-child(3) {
+    grid-area: 1 / 2 / 3 / 3;
+    border-top-right-radius: 3rem;
+    border-bottom-right-radius: 3rem;
+  }
+
+  .gradient {
+    background: url("images/gradient.png") center center/contain repeat;
+    image-rendering: pixelated;
+    z-index: 30;
+    width: 100%;
+    height: 40px;
+    position: relative;
+    top: -55px;
+    text-align: center;
+  }
+
+  body.dark-mode .gradient {
+    background: url("images/gradient-d.png") center center/contain repeat;
+  }
+
+  .animation {
+    animation: animateForward 0.5s ease;
+  }
+
+  .backwards {
+    bottom: 0;
+    animation: animateBackwards 0.5s ease;
+  }
+
+  span.clickable {
+    display: block;
+    border-bottom: 1px dashed #00000020;
+    padding-top: 3rem;
+    cursor: pointer;
+    font-weight: bold;
+    text-align: center;
+  }
+
+  body.dark-mode .animation {
+    background-color: black;
+  }
+
+  #FubleShowAll {
+    position: relative;
+  }
+
+  @keyframes animateForward {
+    from {
+      opacity: 0%;
+    }
+    to {
+      opacity: 100%;
+    }
+  }
+
+  @keyframes animateBackwards {
+    from {
+      opacity: 100%;
+    }
+    to {
+      opacity: 0%;
+    }
+  }
+</style>
