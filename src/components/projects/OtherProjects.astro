@@ -1,0 +1,130 @@
+---
+import ProjectLayout from "../../layouts/ProjectLayout.astro";
+import Link from "../misc/Link.astro";
+import Arrow from "/public/images/arrow.svg";
+---
+
+<ProjectLayout
+  title="Other Projects"
+  link=""
+  previewTitle="Talleres Jimenez"
+  previewText="This was my first profesional project, made for an acquaintance of mine. I got requested to make a webpage for their car workshop"
+>
+  <h3>
+    Talleres Jimenez
+    <span class="title-aside">
+      <a href={"https://talleresjimenez.com/"} target="_blank">
+        <img src={Arrow.src} />
+      </a>
+    </span>
+  </h3>
+  <p>
+    This was my first profesional project, made for an acquaintance of mine. I
+    got requested to make a webpage for their car workshop. They wanted
+    something simple so it was perfect for me to learn how to upload a page
+    online. It was useful to learn how to buy and set up a domain too.
+  </p>
+  <p>
+    For this project, I used pure HTML, CSS and JS with <Link
+      link="https://getbootstrap.com/"
+      name="BootStrap"
+    />. For the comfort of the maintenance of the page, for the sections of
+    "What do we do?" and "Prices", I created two separated js files with the
+    information to generate those sections dynamicaly
+  </p>
+  <p>
+    If I made this page now, I would make a proper SEO technics, such as using
+    more meta tags and using semantic html and optimize the images so they don't
+    take so long to load.
+  </p>
+
+  <h3>
+    Buenas migas
+    <span class="title-aside">
+      <a
+        href={"https://github.com/IsPeG/buenas-migas.github.com"}
+        target="_blank"
+      >
+        <img src={Arrow.src} />
+      </a>
+    </span>
+  </h3>
+  <p>
+    As my second profesional project, they requested me to make an information
+    page for a catering company. This time, I tried to aim for a more
+    distinctive and unique design, using a natural color palette with a lot of
+    colors for making it more fun and pleasant to the user.
+  </p>
+  <p>
+    For this project, I also used HTML, CSS and JS with <Link
+      link="https://getbootstrap.com/"
+      name="BootStrap"
+    />, but this time also adding <Link
+      link="https://jquery.com"
+      name="JQuery"
+    /> for easement and
+    <Link link="https://scrollrevealjs.org" name="ScrollReveal" /> for animations.
+    <p>
+      If I made this page now, I would make a proper SEO technics, such as the
+      ones said earlier, and optimize the images so they don't take so long to
+      load.
+    </p>
+  </p>
+
+  <style>
+    section {
+      /* max-width: 55rem; */
+      margin-bottom: 5rem;
+    }
+
+    h3 {
+      border-bottom: 1px dashed #00000020;
+    }
+
+    h3:not(:nth-child(-n + 2)) {
+      margin-top: 3rem;
+    }
+
+    .title-aside {
+      float: right;
+    }
+
+    li {
+      margin-bottom: 1rem;
+    }
+
+    .gallery-wrapper {
+      margin-right: 0rem;
+
+      @media (min-width: 1024px) {
+        margin-right: 5rem;
+
+        display: flex;
+        flex-direction: column;
+        margin-right: 5rem;
+      }
+    }
+
+    .gallery-wrapper img {
+      display: block;
+      width: 100%;
+      height: 100%;
+    }
+
+    .gallery-wrapper img:nth-child(1) {
+      grid-area: 1 / 1 / 2 / 2;
+      border-top-left-radius: 3rem;
+      border-top-right-radius: 3rem;
+    }
+
+    .gallery-wrapper img:nth-child(2) {
+      grid-area: 2 / 1 / 3 / 2;
+    }
+
+    .gallery-wrapper img:nth-child(3) {
+      grid-area: 1 / 2 / 3 / 3;
+      border-bottom-left-radius: 3rem;
+      border-bottom-right-radius: 3rem;
+    }
+  </style>
+</ProjectLayout>

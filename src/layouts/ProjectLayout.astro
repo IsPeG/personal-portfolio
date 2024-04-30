@@ -2,18 +2,22 @@
 import Arrow from "/public/images/arrow.svg";
 
 const { title, link, previewTitle, previewText } = Astro.props;
-const formattedTitle = title.replace(/\s/g, "");
+const formattedTitle = title.replace(/\s/g, ""); //remove spaces
 ---
 
 <section style="height: 100%;">
   <div style="max-width: 55rem;" id={formattedTitle + "Wrapper"}>
     <h2 class="noise-texture-text" id={title}>
-      <span>{formattedTitle}</span>
-      <span class="title-aside">
-        <a href={link} target="_blank">
-          <img src={Arrow.src} />
-        </a>
-      </span>
+      <span>{title}</span>
+      {
+        link ? (
+          <span class="title-aside">
+            <a href={link} target="_blank">
+              <img src={Arrow.src} />
+            </a>
+          </span>
+        ) : null
+      }
     </h2>
     <div id={formattedTitle + "Preview"}>
       <h3 class="noise-texture-text">{previewTitle}</h3>
@@ -51,8 +55,8 @@ const formattedTitle = title.replace(/\s/g, "");
   _Hide.addEventListener("pointerdown", async function () {
     _test.classList.remove("animation");
     _test.classList.add("backwards");
-    _Preview.style.display = "block";
     await new Promise((resolve) => setTimeout(resolve, 500));
+    _Preview.style.display = "block";
     _ShowAll.style.display = "none";
   });
 </script>
