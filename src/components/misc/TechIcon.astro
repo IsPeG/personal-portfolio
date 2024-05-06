@@ -1,0 +1,43 @@
+---
+import ThreeJS from "../../../public/images/threejs.svg";
+import Symfony from "../../../public/images/symfony.svg";
+import AstroIcon from "../../../public/images/astro.svg";
+import Hydrogen from "../../../public/images/hydrogen.png";
+
+interface Props {
+  handle: string;
+  name: string;
+}
+
+const { handle, name } = Astro.props;
+---
+
+<div class="tech-icon-container">
+  {
+    name == "Three.js" ? (
+      <img src={ThreeJS.src} width="40" height="40" class="icon" />
+    ) : name == "Symfony" ? (
+      <img src={Symfony.src} width="40" height="40" class="icon" />
+    ) : name == "Astro" ? (
+      <img src={AstroIcon.src} width="40" height="40" class="icon" />
+    ) : name == "Hydrogen" ? (
+      <img src={Hydrogen.src} width="40" height="40" class="icon" />
+    ) : (
+      <i class={`bx ${handle} icon`} />
+    )
+  }
+  <span>{name}</span>
+</div>
+
+<style>
+  .icon {
+    font-size: 2.5rem;
+    margin: 0 1.5rem;
+  }
+
+  .tech-icon-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+</style>

@@ -1,1 +1,59 @@
-<section id="knowledge"></section>
+---
+import TechIcon from "./misc/TechIcon.astro";
+---
+
+<section id="knowledge">
+  <h1>
+    <span class="noise-texture-text">[4].</span>
+    <span class="noise-texture-text">Knowledge</span>
+    <!-- <span class="jp">// プロジェクト</span> -->
+  </h1>
+  <h3>Frontend</h3>
+  <div class="kl-container">
+    <TechIcon name="HTML" handle="bxl-html5" />
+    <TechIcon name="CSS" handle="bxl-css3" />
+    <TechIcon name="JS" handle="bxl-javascript" />
+    <TechIcon name="React" handle="bxl-react" />
+    <TechIcon name="Bootstrap" handle="bxl-bootstrap" />
+    <TechIcon name="Jquery" handle="bxl-jquery" />
+    <TechIcon name="Three.js" handle="" />
+    <TechIcon name="Astro" handle="" />
+  </div>
+  <h3>Backend</h3>
+  <div class="kl-container">
+    <TechIcon name="PHP" handle="bxl-php" />
+    <TechIcon name="SQL/MySQL" handle="bxs-data" />
+  </div>
+  <h3>Frameworks</h3>
+  <div class="kl-container">
+    <TechIcon name="Symfony" handle="" />
+    <TechIcon name="Hydrogen" handle="" />
+  </div>
+</section>
+
+<style>
+  .kl-container {
+    display: flex;
+  }
+
+  h1 {
+    border-bottom: 1px dashed #00000020;
+    margin: 0;
+    font-family:
+      "Computer Modern Typewriter Text Regular",
+      ui-sans-serif,
+      system-ui,
+      -apple-system,
+      BlinkMacSystemFont,
+      "Segoe UI",
+      Roboto,
+      "Helvetica Neue",
+      Arial,
+      "Noto Sans",
+      sans-serif,
+      "Apple Color Emoji",
+      "Segoe UI Emoji",
+      "Segoe UI Symbol",
+      "Noto Color Emoji";
+  }
+</style>
