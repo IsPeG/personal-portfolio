@@ -11,9 +11,22 @@ import Professional from "../components/Professional.astro";
   <Projects />
   <Knowledge />
 </main>
+<script>
+  // smooth scrolling when clicking an a tag
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+            behavior: 'smooth'
+        });
+    });
+});
+</script>
 
 <style>
   main {
+    z-index: 5;
     width: 100%;
     overflow-y: none;
     /* desktop */
@@ -23,4 +36,6 @@ import Professional from "../components/Professional.astro";
       scrollbar-width: none;
     }
   }
+
+  
 </style>

@@ -26,6 +26,11 @@ const { title } = Astro.props;
   </body>
 </html>
 <style is:global>
+
+  html {
+    scroll-behavior: smooth !important;
+  }
+
   @font-face {
     font-family: "Devanagari Sangam MN";
     src: url("fonts/devanagari-sangam-mn.ttf");
@@ -53,7 +58,7 @@ const { title } = Astro.props;
 
   .dark-mode {
     background-color: black;
-    color: white;
+    color: white !important;
   }
 
   html {
@@ -62,15 +67,15 @@ const { title } = Astro.props;
     background-size: 224px;
   }
 
-  .noise-texture-text {
+  /* .noise-texture-text {
     background: url("images/noise.jpg") 0 0 / cover no-repeat;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-  }
+  } */
 
-  .dark-mode .noise-texture-text {
+  /* .dark-mode .noise-texture-text {
     filter: invert(100%);
-  }
+  } */
 
   hr {
     display: block;
