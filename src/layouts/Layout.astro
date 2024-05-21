@@ -26,7 +26,6 @@ const { title } = Astro.props;
   </body>
 </html>
 <style is:global>
-
   html {
     scroll-behavior: smooth !important;
   }
@@ -37,7 +36,17 @@ const { title } = Astro.props;
   }
 
   @font-face {
+    font-family: "Testing";
+    /* src: url("fonts/Gambetta-Variable.ttf"); */
+    src: url("fonts/CrimsonPro-Variable.ttf");
+  }
+
+  @font-face {
     font-family: "Computer Modern Typewriter Text Regular";
+
+    /* Borrar y dejar la siguiente linea para que este como antes */
+    /* src: url("fonts/Gambetta-Variable.ttf"); */
+
     src: url("fonts/cmu.typewriter-text-light.ttf");
     /* src: url("fonts/courier-prime.ttf"); */
     /* src: url("fonts/metropolis-regular.ttf"); */

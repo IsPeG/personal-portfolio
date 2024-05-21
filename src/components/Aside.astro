@@ -1,18 +1,28 @@
 ---
 import Nav from "../components/Nav.astro";
 import Footer from "../components/Footer.astro";
+import Triangle from "../../public/images/triangle.svg";
 ---
 
 <aside>
-  <div>
-    <h1 class="noise-texture-text">Personal Portfolio</h1>
-    <h3 class="noise-texture-text">Web Developer</h3>
+  <div class="aside-flex-container">
+    <h1 class="noise-texture-text">Welcome to my Portfolio!</h1>
+    <div>
+      <h3 class="noise-texture-text">
+        <img src={Triangle.src} width="10" height="10" />Web Developer
+      </h3>
+    </div>
   </div>
   <Nav />
   <Footer />
 </aside>
 
 <style>
+  .aside-flex-container {
+    display: flex;
+    flex-direction: column;
+  }
+
   aside {
     font-family:
       "Computer Modern Typewriter Text Regular",
@@ -30,6 +40,8 @@ import Footer from "../components/Footer.astro";
       "Segoe UI Emoji",
       "Segoe UI Symbol",
       "Noto Color Emoji";
+    font-weight: 500;
+
     width: 100%;
     margin-right: 4rem;
     margin-bottom: 5rem;
@@ -40,12 +52,64 @@ import Footer from "../components/Footer.astro";
   }
 
   h1 {
+    border-bottom: 1px dashed #00000020;
     margin: 0;
+    font-family:
+      "Testing",
+      "Computer Modern Typewriter Text Regular",
+      ui-sans-serif,
+      system-ui,
+      -apple-system,
+      BlinkMacSystemFont,
+      "Segoe UI",
+      Roboto,
+      "Helvetica Neue",
+      Arial,
+      "Noto Sans",
+      sans-serif,
+      "Apple Color Emoji",
+      "Segoe UI Emoji",
+      "Segoe UI Symbol",
+      "Noto Color Emoji";
+    font-weight: 650;
+    font-size: 3.5rem;
   }
 
   h3 {
-    text-align: right;
+    display: inline;
+    background-color: #00000020;
+    border-radius: 5px;
+    font-family:
+      "Testing",
+      "Computer Modern Typewriter Text Regular",
+      ui-sans-serif,
+      system-ui,
+      -apple-system,
+      BlinkMacSystemFont,
+      "Segoe UI",
+      Roboto,
+      "Helvetica Neue",
+      Arial,
+      "Noto Sans",
+      sans-serif,
+      "Apple Color Emoji",
+      "Segoe UI Emoji",
+      "Segoe UI Symbol",
+      "Noto Color Emoji";
+    font-weight: bold;
+    font-size: 1.5rem;
+
+    float: right;
+    padding: 2px 5px;
     margin: 0;
+    margin-top: 2rem;
+  }
+
+  h3 img {
+    margin-right: 5px;
+    rotate: -90deg;
+    top: -2px;
+    position: relative;
   }
 
   /* desktop */

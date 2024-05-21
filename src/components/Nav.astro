@@ -4,8 +4,8 @@
     <li>
       <a class="link_effect" href="#professional">Professional experience</a>
     </li>
-    <li><a class="link_effect" href="#projects">My projects</a></li>
     <li><a class="link_effect" href="#knowledge">Knowledge</a></li>
+    <li><a class="link_effect" href="#projects">My projects</a></li>
   </ol>
 </nav>
 
@@ -14,8 +14,8 @@
   const texts = [
     "About me",
     "Professional experience",
-    "My projects",
     "Knowledge",
+    "My projects",
   ];
 
   function sleep(ms) {
@@ -50,9 +50,13 @@
 </script>
 
 <style>
+  nav {
+    z-index: 5;
+  }
+
   ol {
     counter-reset: item;
-    margin: 0;
+    margin: 3.5rem 0;
     padding-left: 0;
     display: flex;
     justify-content: space-between;
@@ -60,6 +64,7 @@
 
     @media (min-width: 1024px) {
       justify-content: none;
+      margin-bottom: 0;
     }
   }
 
@@ -72,10 +77,10 @@
     margin-left: 2em;
     text-align: left;
     border-bottom: none;
+    border-bottom: 1px dashed #00000020;
 
-    @media (min-width: 1024px) {
-      border-bottom: 1px dashed #00000020;
-    }
+    /* @media (min-width: 1024px) {
+    } */
   }
 
   li::before {

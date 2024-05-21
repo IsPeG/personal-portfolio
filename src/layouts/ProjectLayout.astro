@@ -46,13 +46,13 @@ const formattedTitle = title.replace(/\s/g, ""); //remove spaces
   const _ShowAll = document.getElementById(`${formattedTitle}ShowAll`);
   const _Hide = document.getElementById(`Hide${formattedTitle}`);
   const _test = document.getElementById(`${formattedTitle}Wrapper`);
-  _ReadMore.addEventListener("pointerdown", function () {
+  _ReadMore.addEventListener("click", function () {
     _test.classList.remove("backwards");
     _test.classList.add("animation");
     _Preview.style.display = "none";
     _ShowAll.style.display = "block";
   });
-  _Hide.addEventListener("pointerdown", async function () {
+  _Hide.addEventListener("click", async function () {
     _test.classList.remove("animation");
     _test.classList.add("backwards");
     await new Promise((resolve) => setTimeout(resolve, 500));
