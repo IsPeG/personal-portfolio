@@ -21,6 +21,7 @@ import Triangle from "../../public/images/triangle.svg";
   .aside-flex-container {
     display: flex;
     flex-direction: column;
+    z-index: 3;
   }
 
   aside {
@@ -110,6 +111,14 @@ import Triangle from "../../public/images/triangle.svg";
     rotate: -90deg;
     top: -2px;
     position: relative;
+  }
+
+  body.dark-mode h3 img {
+    filter: invert(1);
+  }
+
+  body.dark-mode h3 {
+    background-color: #ffffff20;
   }
 
   /* desktop */

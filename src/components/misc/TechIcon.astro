@@ -15,11 +15,11 @@ const { handle, name } = Astro.props;
 <div class="tech-icon-container">
   {
     name == "Three.js" ? (
-      <img src={ThreeJS.src} width="40" height="40" class="icon" />
+      <img src={ThreeJS.src} width="40" height="40" class="icon invert" />
     ) : name == "Symfony" ? (
-      <img src={Symfony.src} width="40" height="40" class="icon" />
+      <img src={Symfony.src} width="40" height="40" class="icon invert" />
     ) : name == "Astro" ? (
-      <img src={AstroIcon.src} width="40" height="40" class="icon" />
+      <img src={AstroIcon.src} width="40" height="40" class="icon invert" />
     ) : name == "Hydrogen" ? (
       <img src={Hydrogen.src} width="40" height="40" class="icon" />
     ) : (
@@ -39,5 +39,19 @@ const { handle, name } = Astro.props;
     display: flex;
     flex-direction: column;
     align-items: center;
+  }
+
+  span {
+    background-color: #00000020;
+    padding: 2px 5px 0px 5px;
+    border-radius: 5px;
+  }
+
+  body.dark-mode span {
+    background-color: var(--dark-mode-underline-color);
+  }
+
+  body.dark-mode .tech-icon-container .invert {
+    filter: invert(1);
   }
 </style>

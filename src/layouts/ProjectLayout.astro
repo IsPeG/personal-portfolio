@@ -1,5 +1,6 @@
 ---
 import Arrow from "/public/images/arrow.svg";
+import Triangle from "../../public/images/triangle.svg";
 
 const { title, link, previewTitle, previewText } = Astro.props;
 const formattedTitle = title.replace(/\s/g, ""); //remove spaces
@@ -25,7 +26,19 @@ const formattedTitle = title.replace(/\s/g, ""); //remove spaces
         {previewText}
         <div class="gradient">
           <span id={"ReadMore" + formattedTitle} class="clickable">
-            {">"} Read more {"<"}
+            <span>
+              <img
+                src={Triangle.src}
+                width="10"
+                height="10"
+                style="rotate: 90deg;"
+              /> Read more <img
+                src={Triangle.src}
+                width="10"
+                height="10"
+                style="rotate: -90deg;"
+              />
+            </span>
           </span>
         </div>
       </p>
@@ -34,7 +47,19 @@ const formattedTitle = title.replace(/\s/g, ""); //remove spaces
       <!-- <div class="animation"></div> -->
       <slot />
       <span id={"Hide" + formattedTitle} class="clickable">
-        {">"} I'm done reading! {"<"}
+        <span>
+          <img
+            src={Triangle.src}
+            width="10"
+            height="10"
+            style="rotate: 90deg;"
+          /> I'm done reading! <img
+            src={Triangle.src}
+            width="10"
+            height="10"
+            style="rotate: -90deg;"
+          />
+        </span>
       </span>
     </div>
   </div>
@@ -70,6 +95,10 @@ const formattedTitle = title.replace(/\s/g, ""); //remove spaces
     border-bottom: 1px dashed #00000020;
   }
 
+  body.dark-mode h3 {
+    border-bottom: 1px dashed #ffffff20;
+  }
+
   h3:not(:nth-child(-n + 2)) {
     margin-top: 3rem;
   }
@@ -78,8 +107,30 @@ const formattedTitle = title.replace(/\s/g, ""); //remove spaces
     float: right;
   }
 
+  body.dark-mode .title-aside img {
+    filter: invert(1);
+  }
+
   li {
     margin-bottom: 1rem;
+  }
+
+  .clickable span {
+    background-color: #00000020;
+    border-radius: 5px;
+    padding: 4px 5px 1px 5px;
+  }
+
+  body.dark-mode .clickable span {
+    background-color: #ffffff20;
+  }
+
+  body.dark-mode .clickable span img {
+    filter: invert(1);
+  }
+
+  .clickable {
+    padding-bottom: 5px;
   }
 
   .gallery-wrapper {
@@ -150,7 +201,8 @@ const formattedTitle = title.replace(/\s/g, ""); //remove spaces
   }
 
   body.dark-mode .gradient {
-    background: url("images/gradient-d.png") center center/contain repeat;
+    /* background: url("images/gradient-d.png") center center/contain repeat; */
+    background: none;
   }
 
   .animation {

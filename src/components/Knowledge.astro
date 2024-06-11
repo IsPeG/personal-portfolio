@@ -62,9 +62,17 @@ import TechIcon from "./misc/TechIcon.astro";
       "Noto Color Emoji";
   }
 
+  body.dark-mode h1 {
+    border-bottom: 1px dashed var(--dark-mode-underline-color);
+  }
+
   h3 {
     border-bottom: 1px dotted #00000020;
 
     max-width: 55rem;
+  }
+
+  body.dark-mode h3 {
+    border-bottom: 1px dashed var(--dark-mode-underline-color);
   }
 </style>

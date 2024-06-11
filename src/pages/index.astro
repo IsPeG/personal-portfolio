@@ -4,7 +4,7 @@ import Aside from "../components/Aside.astro";
 import Main from "../components/Main.astro";
 ---
 
-<Layout title="Personal portfolio">
+<Layout title="Ismael Gómez | Portfolio">
   <div class="wrapper">
     <Aside />
     <Main />
@@ -12,6 +12,9 @@ import Main from "../components/Main.astro";
   <div class="spot one"></div>
   <div class="spot two"></div>
   <div class="spot three"></div>
+  <div class="theme-button" id="theme-button">
+    <i id="theme-icon" class="bx bxs-moon"></i>
+  </div>
 </Layout>
 
 <script>
@@ -20,6 +23,20 @@ import Main from "../components/Main.astro";
       e.preventDefault();
       e.stopPropagation();
     });
+  });
+
+  const _themeIcon = document.getElementById("theme-icon");
+  const _body = document.body;
+  document.getElementById("theme-button").addEventListener("click", (e) => {
+    if (!_body.classList.contains("dark-mode")) {
+      _body.classList.add("dark-mode");
+      _themeIcon.classList.remove("bxs-moon");
+      _themeIcon.classList.add("bxs-sun");
+    } else {
+      _body.classList.remove("dark-mode");
+      _themeIcon.classList.add("bxs-moon");
+      _themeIcon.classList.remove("bxs-sun");
+    }
   });
 </script>
 
@@ -33,6 +50,7 @@ import Main from "../components/Main.astro";
   body {
     margin: 0;
     padding: 0;
+    transition: 0.25s;
 
     background-image: linear-gradient(
         rgba(246, 246, 246, 0.4) 0.1em,
@@ -66,6 +84,26 @@ import Main from "../components/Main.astro";
         transparent 0.1em
       ),
       linear-gradient(90deg, rgba(26, 26, 26, 0.4) 0.1em, transparent 0.1em);
+  }
+
+  .theme-button {
+    z-index: 999;
+    position: fixed;
+    right: 0;
+    top: 0;
+    background-color: white;
+    border: 1px solid #e1e1e1;
+    color: black;
+    border-radius: 0.8rem;
+    width: 2rem;
+    display: flex;
+    justify-content: center;
+    padding: 0.2rem;
+    margin: 1rem;
+  }
+
+  .theme-button i {
+    display: block;
   }
 
   .spot.one {
@@ -113,8 +151,12 @@ import Main from "../components/Main.astro";
   .wrapper {
     padding: 1rem;
     display: flex;
-    height: 100vh;
+    height: 100%;
     flex-direction: column;
+
+    @media (min-width: 1024px) {
+      height: 100vh;
+    }
 
     /* font-family:
       "Devanagari Sangam MN",

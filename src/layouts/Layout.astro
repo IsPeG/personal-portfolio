@@ -10,7 +10,10 @@ const { title } = Astro.props;
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="description" content="Astro description" />
+    <meta
+      name="description"
+      content="Portfolio of Ismael Gómez Reche, Frontend developer based on Valencia, Spain"
+    />
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link
@@ -20,7 +23,6 @@ const { title } = Astro.props;
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
   </head>
-  <!-- <body class="dark-mode"> -->
   <body>
     <slot />
   </body>
@@ -63,6 +65,8 @@ const { title } = Astro.props;
       white 60%
     );
     --mobile-breakpoint: 1024px;
+
+    --dark-mode-underline-color: #ffffff20;
   }
 
   .dark-mode {

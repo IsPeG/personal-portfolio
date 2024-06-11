@@ -1,6 +1,9 @@
 ---
 import ProjectLayout from "../../layouts/ProjectLayout.astro";
-import Image1 from "../../../public/images/pj01/01.png";
+import ProjectImage1 from "../../../public/images/pj01/01.png";
+import ProjectImage2 from "../../../public/images/pj01/02.png";
+import ProjectImage3 from "../../../public/images/pj01/03.png";
+import ProjectImage4 from "../../../public/images/pj01/04.png";
 import Link from "../misc/Link.astro";
 ---
 
@@ -8,56 +11,71 @@ import Link from "../misc/Link.astro";
   title="Fuble"
   link="https://github.com/IsPeG/room_editor"
   previewTitle="The idea and its development"
-  previewText="Fuble is born by the love I have for Animal Crossing series and the interest of creating a tool capable of simulating the part of the game of decorating your own room. This project was also made as a way for me to learn React and Three.js from scratch."
+  previewText="  Fuble is born by the love I have for Animal Crossing series and the interest of creating a tool capable of simulating the part of the game of decorating your own room. This project was also made as a way for me to learn React and Three.js from scratch."
 >
   <h3 class="noise-texture-text">The idea and its development</h3>
   <p>
-    Fuble is born by the love I have for Animal Crossing series and the interest
-    of creating a tool capable of simulating the part of the game of decorating
-    your own room. This project was also made as a way for me to learn React and
-    Three.js from scratch.
+    &emsp;&emsp;Fuble is born by the love I have for Animal Crossing series and
+    the interest of creating a tool capable of recreating the part of the game
+    of decorating your own room. This project was also made as a way for me to
+    learn <Link link="https://react.dev/" name="React" /> and <Link
+      link="https://threejs.org/"
+      name="Three.js"
+    /> from scratch.
   </p>
   <p>
-    The original idea of this project was to create a pixel art, 2D environment,
-    with an isometric view, making and designing all the sprites and graphics by
-    myself. So I investigated and searched for 2D render engines such as Pixi.js
-    and Cocos, but then I found Three.js, a 3D renderer that was kinda popular
-    at the moment. A lot of people was making fully 3D portfolios and there was
-    a lot of tutorials on youtube about it. Three.js was kinda easy to learn and
-    with a lot of potential, so I decided to give it a try and discarded the
-    previous idea of making the project with a 2D renderer.
+    &emsp;&emsp;The original idea of this project was to create a pixel art, 2D
+    environment, with an isometric view, making and designing all the sprites
+    and graphics by myself. So I investigated and searched for 2D render engines
+    such as <Link link="https://pixijs.com/" name="Pixi.js" /> and <Link
+      link="https://www.cocos.com/en"
+      name="Cocos"
+    />, but then I found Three.js, a 3D renderer that was kinda popular at the
+    moment. A lot of people was making fully 3D portfolios and there was a lot
+    of tutorials on youtube about it. Three.js was kinda easy to learn and with
+    a lot of potential, so I decided to give it a try and discarded the previous
+    idea of making the project with a 2D renderer.
   </p>
   <p>
-    The first problem I had was how could I work with both of them at the same
-    time. React seemed to me like it was not made to work well with Three.js. It
-    had no sense to me to use a component driven library with the 3D renderer,
-    that used pure javascript. With this problem in mind, I searched for a
-    solution and it didn't took too long to discover React Three Fiber, making a
-    lot of the elements of Three.js components ready to use and creating like so
-    a way a lot more easier to use the 3D renderer with react.
+    &emsp;&emsp;The first problem I had was how could I work with both of them
+    at the same time. React seemed to me like it was not made to work well with
+    Three.js. It had no sense to me to use a component driven library with the
+    3D renderer, that used pure Javascript. With this problem in mind, I
+    searched for a solution and it didn't took too long to discover <Link
+      link="https://docs.pmnd.rs/react-three-fiber/getting-started/introduction"
+      name="React Three Fiber"
+    />, making a lot of the elements of Three.js components ready to use and
+    creating like so a way a lot more easier to use the 3D renderer with react.
   </p>
   <h3 class="noise-texture-text">First stages</h3>
   <p>
-    Early in the development, I knew I would have to make all the 3D models,
-    with the textures for the furniture, floor and walls. Knowing this, I
-    searched for an easy program for making 3D models. I tried Blender, but it
-    was so extense and difficult for me to learn. Previously, I didn't know
-    anything about 3D modeling, so getting into this was going to be hard, I
-    thought, but it was only until I discovered Blockbench.
+    &emsp;&emsp;Early in the development, I knew I would have to make all the 3D
+    models, with the textures for the furniture, floor and walls. Knowing this,
+    I searched for an easy program for making 3D models. I knew the existence of <Link
+      link="https://www.blender.org/"
+      name="Blender"
+    />, but it was so extense and difficult for me to learn, so I dropped the
+    idea of using it. Before creating this project, I didn't know anything about
+    3D modeling, so I thought getting the knowledge for creating 3D models was
+    going to be hard, but it was only until I discovered Blockbench.
   </p>
   <p>
-    Blockbench was a 3D modeling focused to make models for Minecraft, but it
-    could be used to make all kind of models too (just as a curiosity, it runs
-    with Three.js, using Electron for the desktop app). It was perfect:
-    Blockbench was easy to learn, simple and it could export models to GLTF,
-    making possible to transform the model to a re-usable React component using
+    &emsp;&emsp;<Link link="https://www.blockbench.net/" name="Blockbench" /> was
+    a 3D modeling focused to make models for Minecraft, but it could be used to make
+    all kind of models too (just as a curiosity, it runs with Three.js, using <Link
+      link="https://www.electronjs.org/"
+      name="Electron"
+    />
+    for the desktop app). It was perfect: Blockbench was easy to learn, simple and
+    it could export models to GLTF, making possible to transform the model to a re-usable
+    React component using
     <Link link="https://github.com/pmndrs/gltfjsx" name="gltfjsx" />
   </p>
   <h3 class="noise-texture-text">The project right now</h3>
   <p>
-    Currently, the project is still in development and it will be like this for
-    a very long time, growing as I do. This is a list of what the app have right
-    now:
+    &emsp;&emsp;Currently, the project is still in development and it will be
+    like this for a very long time, growing as I do. This is a list of what the
+    app have right now:
   </p>
   <ul>
     <li>
@@ -103,10 +121,12 @@ import Link from "../misc/Link.astro";
       </span>
     </li>
   </ul>
+  <h3 class="noise-texture-text">Gallery</h3>
   <div class="gallery-wrapper">
-    <img src={Image1.src} alt="" />
-    <img src={Image1.src} alt="" />
-    <img src={Image1.src} alt="" />
+    <img src={ProjectImage1.src} alt="fuble first image" />
+    <img src={ProjectImage2.src} alt="fuble second image" />
+    <img src={ProjectImage3.src} alt="fuble third image" />
+    <img src={ProjectImage4.src} alt="fuble fourth image" />
   </div>
 </ProjectLayout>
 
@@ -118,6 +138,10 @@ import Link from "../misc/Link.astro";
 
   h3 {
     border-bottom: 1px dashed #00000020;
+  }
+
+  body.dark-mode h3 {
+    border-bottom: 1px dashed var(--dark-mode-underline-color);
   }
 
   h3:not(:nth-child(-n + 2)) {
@@ -153,19 +177,21 @@ import Link from "../misc/Link.astro";
     height: 100%;
   }
 
-  .gallery-wrapper img:nth-child(1) {
-    grid-area: 1 / 1 / 2 / 2;
-    border-top-left-radius: 3rem;
-  }
+  @media (min-width: 1024px) {
+    .gallery-wrapper img:nth-child(1) {
+      border-top-left-radius: 3rem;
+    }
 
-  .gallery-wrapper img:nth-child(2) {
-    grid-area: 2 / 1 / 3 / 2;
-    border-bottom-left-radius: 3rem;
-  }
+    .gallery-wrapper img:nth-child(2) {
+      border-top-right-radius: 3rem;
+    }
 
-  .gallery-wrapper img:nth-child(3) {
-    grid-area: 1 / 2 / 3 / 3;
-    border-top-right-radius: 3rem;
-    border-bottom-right-radius: 3rem;
+    .gallery-wrapper img:nth-child(3) {
+      border-bottom-left-radius: 3rem;
+    }
+
+    .gallery-wrapper img:nth-child(4) {
+      border-bottom-right-radius: 3rem;
+    }
   }
 </style>

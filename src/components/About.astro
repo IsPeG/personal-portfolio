@@ -32,7 +32,7 @@ import { Image } from "astro:assets";
             height={75}
           />
           <span class="background-text"
-            >Avaliable for work <span class="green-orb"></span></span
+            ><span>Avaliable for work</span> <div class="green-orb"></div></span
           >
         </div>
       </div>
@@ -80,6 +80,10 @@ import { Image } from "astro:assets";
       "Noto Color Emoji";
   }
 
+  body.dark-mode h1 {
+    border-bottom: 1px dashed #ffffff20;
+  }
+
   h1 span {
     margin-right: 1.5rem;
   }
@@ -94,6 +98,7 @@ import { Image } from "astro:assets";
   }
 
   .green-orb {
+    min-width: 10px;
     width: 10px;
     height: 10px;
     display: block;
@@ -107,12 +112,13 @@ import { Image } from "astro:assets";
     width: calc(100% - 1rem - 2px);
     justify-content: space-around;
     align-items: center;
-    text-align: unset;
+    text-align: left;
     background-color: #fff;
     font-weight: bold;
     border-radius: 0 0 0.3rem 0.3rem;
     padding: 0.2rem 0.5rem;
     border: 1px dashed #00000020;
+    color: black;
   }
 
   .grid {

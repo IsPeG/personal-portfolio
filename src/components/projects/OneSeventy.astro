@@ -10,43 +10,46 @@ import Link from "../misc/Link.astro";
   title="OneSeventy Storefront"
   link="https://oneseventy.es"
   previewTitle="Introduction and the first steps"
-  previewText="OneSeventy is a urban jewelry brand created by 2 friends which contacted me for making the storefront and help them out with their e-commerce project."
+  previewText="  OneSeventy is a urban jewelry brand created by 2 friends which contacted me for making the storefront and help them out with their e-commerce project."
 >
   <h3 class="noise-texture-text">Introduction and the first steps</h3>
   <p>
-    OneSeventy is a urban jewelry brand created by 2 friends which contacted me
-    for making the storefront and help them out with their e-commerce project.
+    &emsp;&emsp;OneSeventy is a urban jewelry brand created by 2 friends which
+    contacted me for making the storefront and help them out with their
+    e-commerce project.
   </p>
   <p>
-    At first, when they contacted me, I suggested them to create the online shop
-    using Shopify. I knew it was one of the most popular platforms for making an
-    online store as almost every shop I saw in the internet that was not a
-    really big buissness used Shopify for the e-commerce. The only thing I was
-    having doubts about was how to make the storefront. I knew Shopify had a
-    default storefront with some themes for free, but the objective was to
-    making a unique and fully customizable storefront. After some research, I
-    found the <Link link="https://hydrogen.shopify.dev/" name="Hydrogen" /> framework,
-    which is based on Remix for creating custom storefronts for Shopify and easy
-    to deploy on the platform using Oxigen.
+    &emsp;&emsp;At first, when they contacted me, I suggested them to create the
+    online shop using Shopify. I knew it was one of the most popular platforms
+    for making an online store as almost every shop I saw in the internet that
+    was not a really big buissness used Shopify for the e-commerce. The only
+    thing I was having doubts about was how to make the storefront. I knew
+    Shopify had a default storefront with some themes for free, but the
+    objective was to making a unique and fully customizable storefront. After
+    some research, I found the <Link
+      link="https://hydrogen.shopify.dev/"
+      name="Hydrogen"
+    /> framework, which is based on Remix for creating custom storefronts for Shopify
+    and easy to deploy on the platform using Oxigen.
   </p>
   <p>
-    After some time reading the docs and reviewing some tutorials on internet, I
-    decided that Hydrogen and Shopify was the way to go and told my friends we
-    could start the project.
+    &emsp;&emsp;After some time reading the docs and reviewing some tutorials on
+    internet, I decided that Hydrogen and Shopify was the way to go and told my
+    friends we could start the project.
   </p>
   <h3 class="noise-texture-text">Development</h3>
   <p>
-    After creating the quickstart project and setting up the API keys, the
-    development of the storefront started. It took several days to get the first
-    version of the storefront ready to show the potential of it. Both of my
-    friends liked it a lot. I was told to make some tweaks on the design so it
-    could be more like how they had in mind. After that and setting up the
+    &emsp;&emsp;After creating the quickstart project and setting up the API
+    keys, the development of the storefront started. It took several days to get
+    the first version of the storefront ready to show the potential of it. Both
+    of my friends liked it a lot. I was told to make some tweaks on the design
+    so it could be more like how they had in mind. After that and setting up the
     domain, the first version of the storefront was online and ready to use for
     all customers.
   </p>
   <p>
-    The second version of it added new tweaks on the design and new sections to
-    the page:
+    &emsp;&emsp;The second version of it added new tweaks on the design and new
+    sections to the page:
   </p>
   <ul>
     <li>
@@ -60,14 +63,14 @@ import Link from "../misc/Link.astro";
     <li>A FAQ</li>
   </ul>
   <p>
-    The first collection was also disabled so the customers couldn't buy the
-    items of said collection anymore but was left visible as a way to show them
-    off.
+    &emsp;&emsp;The first collection was also disabled so the customers couldn't
+    buy the items of said collection anymore but was left visible as a way to
+    show them off.
   </p>
 
   <p>
-    Currently, im still adding the ideas they have to the page and assisting
-    them with the use of Shopify.
+    &emsp;&emsp;Currently, im still adding the ideas they have and doing the
+    maintenance of the page and assisting them with the use of Shopify.
   </p>
 
   <h3 class="noise-texture-text">Gallery</h3>
@@ -86,6 +89,10 @@ import Link from "../misc/Link.astro";
 
   h3 {
     border-bottom: 1px dashed #00000020;
+  }
+
+  body.dark-mode h3 {
+    border-bottom: 1px dashed var(--dark-mode-underline-color);
   }
 
   h3:not(:nth-child(-n + 2)) {
