@@ -1,5 +1,6 @@
 ---
 import { Image } from "astro:assets";
+import Link from "./misc/Link.astro";
 ---
 
 <section id="about">
@@ -22,7 +23,9 @@ import { Image } from "astro:assets";
             >Focused on building unique & creative websites</span
           >
         </div>
-        <div></div>
+        <div>
+          <Link link="/public/Ismael_Gomez_CV.pdf" name="Download my cv" />
+        </div>
         <div class="image-container">
           <Image
             class="about-me-image"
