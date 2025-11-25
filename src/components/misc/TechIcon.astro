@@ -3,6 +3,8 @@ import ThreeJS from "../../../public/images/threejs.svg";
 import Symfony from "../../../public/images/symfony.svg";
 import AstroIcon from "../../../public/images/astro.svg";
 import Hydrogen from "../../../public/images/hydrogen.png";
+import CodeIgniter4 from "../../../public/images/ci4.svg";
+import N8N from "../../../public/images/n8n.svg";
 
 interface Props {
   handle: string;
@@ -22,6 +24,10 @@ const { handle, name } = Astro.props;
       <img src={AstroIcon.src} width="40" height="40" class="icon invert" />
     ) : name == "Hydrogen" ? (
       <img src={Hydrogen.src} width="40" height="40" class="icon" />
+    ) : name == "CodeIngiter 4" ? (
+      <img src={CodeIgniter4.src} width="40" height="40" class="icon invert" />
+    ) : name == "N8N" ? (
+      <img src={N8N.src} width="40" height="40" class="icon invert" />
     ) : (
       <i class={`bx ${handle} icon`} />
     )
@@ -42,9 +48,13 @@ const { handle, name } = Astro.props;
   }
 
   span {
+    display: block;
     background-color: #00000020;
-    padding: 2px 5px 0px 5px;
+    padding: 2px 10px 0px 10px;
+    text-align: center;
+    min-width: 3rem;
     border-radius: 5px;
+    margin-top: .5rem;
   }
 
   body.dark-mode span {
